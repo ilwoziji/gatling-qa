@@ -1,0 +1,2 @@
+#!/bin/bash
+cp /Users/xiaosa/IdeaProjects/gatling/src/test/java/computerdatabase/TestCallBaiduSimulation.java /Users/xiaosa/dev_tools/gatling-charts-highcharts-bundle-3.9.5/user-files/simulations/computerdatabase
