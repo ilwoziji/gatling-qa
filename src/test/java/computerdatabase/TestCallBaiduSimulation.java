@@ -29,9 +29,9 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class TestCallBaiduSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 5000;
+    private static int TEST_USER_COUNT = 2000;
 
-    private static int DURATION_SECONDS = 10;
+    private static int DURATION_SECONDS = 100;
 
     private HttpProtocolBuilder httpProtocol = http
             //.baseUrl("http://localhost:18000")
