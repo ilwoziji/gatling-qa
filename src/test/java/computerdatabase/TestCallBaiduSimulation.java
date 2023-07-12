@@ -36,7 +36,7 @@ public class TestCallBaiduSimulation extends Simulation {
     private HttpProtocolBuilder httpProtocol = http
             //.baseUrl("http://localhost:8001")
             //.baseUrl("https://pre.actqa.com/qa/v1/question-tag/all")
-            .baseUrl("https://pregw.actqa.com/qa/v1/question-tag/all")
+            .baseUrl("http://172.31.43.177:8000/qa/v1/question-tag/all")
             .inferHtmlResources()
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36");
 
