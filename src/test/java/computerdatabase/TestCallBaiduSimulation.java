@@ -41,7 +41,8 @@ public class TestCallBaiduSimulation extends Simulation {
 
     private ScenarioBuilder scn = scenario(TestCallBaiduSimulation.class.getName())
             .exec(
-                    http("/").get("/query/user?id=1")
+                    //http("/").get("/query/user?id=1")
+                    http("/").get("/")
             );
 
     {
