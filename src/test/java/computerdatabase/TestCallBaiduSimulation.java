@@ -29,7 +29,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class TestCallBaiduSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 10000;
+    private static int TEST_USER_COUNT = 5000;
 
     private static int DURATION_SECONDS = 10;
 
