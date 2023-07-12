@@ -5,14 +5,10 @@ import static io.gatling.javaapi.core.CoreDsl.constantUsersPerSec;
 import static io.gatling.javaapi.core.CoreDsl.css;
 import static io.gatling.javaapi.core.CoreDsl.csv;
 import static io.gatling.javaapi.core.CoreDsl.exec;
-import static io.gatling.javaapi.core.CoreDsl.nothingFor;
 import static io.gatling.javaapi.core.CoreDsl.rampUsers;
-import static io.gatling.javaapi.core.CoreDsl.rampUsersPerSec;
 import static io.gatling.javaapi.core.CoreDsl.repeat;
 import static io.gatling.javaapi.core.CoreDsl.scenario;
-import static io.gatling.javaapi.core.CoreDsl.stressPeakUsers;
 import static io.gatling.javaapi.core.CoreDsl.tryMax;
-import static io.gatling.javaapi.core.OpenInjectionStep.atOnceUsers;
 import static io.gatling.javaapi.http.HttpDsl.http;
 import static io.gatling.javaapi.http.HttpDsl.status;
 import io.gatling.javaapi.core.ChainBuilder;
@@ -38,8 +34,8 @@ public class TestCallBaiduSimulation extends Simulation {
     private static int DURATION_SECONDS = 10;
 
     private HttpProtocolBuilder httpProtocol = http
-            .baseUrl("http://localhost:8001")
-            //.baseUrl("https://pre.actqa.com/qa/v1/question-tag/all")
+            //.baseUrl("http://localhost:8001")
+            .baseUrl("https://pre.actqa.com/qa/v1/question-tag/all")
             .inferHtmlResources()
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36");
 
@@ -49,17 +45,7 @@ public class TestCallBaiduSimulation extends Simulation {
             );
 
     {
-        setUp(
-                scn.injectOpen(
-                        nothingFor(4), // 1
-                        atOnceUsers(10), // 2
-                        rampUsers(10).during(5), // 3
-                        constantUsersPerSec(20).during(15), // 4
-                        constantUsersPerSec(20).during(15).randomized(), // 5
-                        rampUsersPerSec(10).to(20).during(10), // 6
-                        rampUsersPerSec(10).to(20).during(10).randomized(), // 7
-                        stressPeakUsers(1000).during(20) // 8
-                ).protocols(httpProtocol)
-        );
+        //setUp(scn.injectOpen(rampUsers(TEST_USER_COUNT).during(DURATION_SECONDS))).protocols(httpProtocol);
+        setUp(scn.injectOpen(constantUsersPerSec(TEST_USER_COUNT).during(DURATION_SECONDS))).protocols(httpProtocol);
     }
 }
