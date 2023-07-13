@@ -29,14 +29,14 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class TestCallBaiduSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 5000;
+    private static int TEST_USER_COUNT = 2000;
 
-    private static int DURATION_SECONDS = 10;
+    private static int DURATION_SECONDS = 100;
 
     private HttpProtocolBuilder httpProtocol = http
             //.baseUrl("http://localhost:8001")
-            //.baseUrl("https://pre.actqa.com/qa/v1/question-tag/all")
-            .baseUrl("http://172.31.24.146:8000/t/a")
+            .baseUrl("https://pre.actqa.com/qa/v1/question-tag/all")
+            //.baseUrl("http://172.31.24.146:8000/t/a")
             .inferHtmlResources()
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36");
 
