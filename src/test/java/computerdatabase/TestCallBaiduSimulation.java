@@ -38,7 +38,9 @@ public class TestCallBaiduSimulation extends Simulation {
             //.baseUrl("http://localhost:8001")
             //.baseUrl("https://pre.actqa.com/qa/v1/question-tag/all")
             //.baseUrl("http://172.31.6.108:8003/qa/v1/question-tag/all")
-            .baseUrl("http://172.31.24.146:8000/qa/v1/question-tag/all")
+            //.baseUrl("http://172.31.24.146:8000/qa/v1/question-tag/all")
+            //
+            .baseUrl("http://172.31.1.17")
             .inferHtmlResources()
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36");
 
@@ -49,18 +51,19 @@ public class TestCallBaiduSimulation extends Simulation {
             );
 
     {
-        setUp(
-                // generate a closed workload injection profile
-                // with levels of 10, 15, 20, 25 and 30 concurrent users
-                // each level lasting 10 seconds
-                // separated by linear ramps lasting 10 seconds
-                scn.injectClosed(
-                        incrementConcurrentUsers(100)
-                                .times(10)
-                                .eachLevelLasting(10)
-                                .separatedByRampsLasting(10)
-                                .startingFrom(100) // Int
-                ).protocols(httpProtocol)
-        );
+//        setUp(
+//                // generate a closed workload injection profile
+//                // with levels of 10, 15, 20, 25 and 30 concurrent users
+//                // each level lasting 10 seconds
+//                // separated by linear ramps lasting 10 seconds
+//                scn.injectClosed(
+//                        incrementConcurrentUsers(100)
+//                                .times(10)
+//                                .eachLevelLasting(10)
+//                                .separatedByRampsLasting(10)
+//                                .startingFrom(100) // Int
+//                ).protocols(httpProtocol)
+//        );
+        setUp(scn.injectOpen(constantUsersPerSec(TEST_USER_COUNT).during(DURATION_SECONDS))).protocols(httpProtocol);
     }
 }
