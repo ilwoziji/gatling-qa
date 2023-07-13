@@ -5,6 +5,7 @@ import static io.gatling.javaapi.core.CoreDsl.constantUsersPerSec;
 import static io.gatling.javaapi.core.CoreDsl.css;
 import static io.gatling.javaapi.core.CoreDsl.csv;
 import static io.gatling.javaapi.core.CoreDsl.exec;
+import static io.gatling.javaapi.core.CoreDsl.incrementConcurrentUsers;
 import static io.gatling.javaapi.core.CoreDsl.rampUsers;
 import static io.gatling.javaapi.core.CoreDsl.repeat;
 import static io.gatling.javaapi.core.CoreDsl.scenario;
@@ -47,7 +48,18 @@ public class TestCallBaiduSimulation extends Simulation {
             );
 
     {
-        //setUp(scn.injectOpen(rampUsers(TEST_USER_COUNT).during(DURATION_SECONDS))).protocols(httpProtocol);
-        setUp(scn.injectOpen(constantUsersPerSec(TEST_USER_COUNT).during(DURATION_SECONDS))).protocols(httpProtocol);
+        setUp(
+                // generate a closed workload injection profile
+                // with levels of 10, 15, 20, 25 and 30 concurrent users
+                // each level lasting 10 seconds
+                // separated by linear ramps lasting 10 seconds
+                scn.injectClosed(
+                        incrementConcurrentUsers(100)
+                                .times(10)
+                                .eachLevelLasting(10)
+                                .separatedByRampsLasting(10)
+                                .startingFrom(100) // Int
+                )
+        );
     }
 }
