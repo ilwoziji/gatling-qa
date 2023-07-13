@@ -59,7 +59,7 @@ public class TestCallBaiduSimulation extends Simulation {
                                 .eachLevelLasting(10)
                                 .separatedByRampsLasting(10)
                                 .startingFrom(100) // Int
-                )
+                ).protocols(httpProtocol)
         );
     }
 }
