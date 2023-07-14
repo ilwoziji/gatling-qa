@@ -23,7 +23,7 @@ public class RegistrationAllSimulation extends Simulation {
     private static int DURATION_SECONDS = 100;
 
     private HttpProtocolBuilder httpProtocol = http
-            .baseUrl("http://172.31.8.215:10000")
+            .baseUrl("http://172.31.18.132:10000")
             //.baseUrl("https://pre.actqa.com")
             .inferHtmlResources()
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
