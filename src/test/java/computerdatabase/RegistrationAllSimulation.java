@@ -34,8 +34,14 @@ public class RegistrationAllSimulation extends Simulation {
                     http("registration")
                             .post("/account/user_action/wallet_login")
                             .header("content-type", "application/json")
-                            .body(StringBody(v -> "{ \"walletAddress\": \"" + randomWalletAddress() + "\",\"walletSign\": \"123456\"}"))
+                            .body(StringBody(v -> generateBody()))
             );
+
+    private static String generateBody(){
+        String address = "{ \"walletAddress\": \"" + randomWalletAddress() + "\",\"walletSign\": \"123456\"}";
+        System.out.println(address);
+        return address;
+    }
 
     private static String randomWalletAddress(){
         return "0x11"+ UUID.randomUUID().toString().replace("-","");
@@ -46,6 +52,6 @@ public class RegistrationAllSimulation extends Simulation {
     }
 
 //    public static void main(String[] args) {
-//        System.out.println(randomWalletAddress());
+//        System.out.println(generateBody());
 //    }
 }
