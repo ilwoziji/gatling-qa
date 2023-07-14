@@ -30,16 +30,16 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class TestCallBaiduSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 8000;
+    private static int TEST_USER_COUNT = 5000;
 
     private static int DURATION_SECONDS = 100;
 
     private HttpProtocolBuilder httpProtocol = http
             //.baseUrl("http://localhost:8001")
             //.baseUrl("https://pre.actqa.com/qa/v1/question-tag/all")
-            //.baseUrl("http://172.31.6.108:8003/qa/v1/question-tag/all")
+            .baseUrl("http://172.31.6.108:8003/qa/v1/question-tag/all")
             //.baseUrls("http://172.31.6.108:8003/qa/v1/question-tag/all","http://172.31.21.138:8003/qa/v1/question-tag/all")
-            .baseUrls("http://172.31.27.97:8000/qa/v1/question-tag/all","http://172.31.43.179:8000/qa/v1/question-tag/all")
+            //.baseUrls("http://172.31.27.97:8000/qa/v1/question-tag/all","http://172.31.43.179:8000/qa/v1/question-tag/all")
             //.baseUrl("http://172.31.1.17")
             .inferHtmlResources()
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
