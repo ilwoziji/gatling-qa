@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 public class RegistrationAllSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 1000;
+    private static int TEST_USER_COUNT = 2000;
 
     private static int DURATION_SECONDS = 100;
 
