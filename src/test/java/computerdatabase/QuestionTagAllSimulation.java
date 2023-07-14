@@ -5,21 +5,13 @@ import static io.gatling.javaapi.core.CoreDsl.constantUsersPerSec;
 import static io.gatling.javaapi.core.CoreDsl.css;
 import static io.gatling.javaapi.core.CoreDsl.csv;
 import static io.gatling.javaapi.core.CoreDsl.exec;
-import static io.gatling.javaapi.core.CoreDsl.incrementConcurrentUsers;
-import static io.gatling.javaapi.core.CoreDsl.rampUsers;
 import static io.gatling.javaapi.core.CoreDsl.repeat;
 import static io.gatling.javaapi.core.CoreDsl.scenario;
 import static io.gatling.javaapi.core.CoreDsl.tryMax;
 import static io.gatling.javaapi.http.HttpDsl.http;
-import static io.gatling.javaapi.http.HttpDsl.status;
-import io.gatling.javaapi.core.ChainBuilder;
-import io.gatling.javaapi.core.FeederBuilder;
 import io.gatling.javaapi.core.ScenarioBuilder;
 import io.gatling.javaapi.core.Simulation;
 import io.gatling.javaapi.http.HttpProtocolBuilder;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * This sample is based on our official tutorials:
@@ -28,7 +20,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *   <li><a href="https://gatling.io/docs/gatling/tutorials/advanced">Gatling advanced tutorial</a>
  * </ul>
  */
-public class TestCallBaiduSimulation extends Simulation {
+public class QuestionTagAllSimulation extends Simulation {
 
     private static int TEST_USER_COUNT = 5000;
 
@@ -45,7 +37,7 @@ public class TestCallBaiduSimulation extends Simulation {
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
             .shareConnections();
 
-    private ScenarioBuilder scn = scenario(TestCallBaiduSimulation.class.getName())
+    private ScenarioBuilder scn = scenario(QuestionTagAllSimulation.class.getName())
             .exec(
                     //http("/").get("/query/user?id=1")
                     http("/").get("/")
