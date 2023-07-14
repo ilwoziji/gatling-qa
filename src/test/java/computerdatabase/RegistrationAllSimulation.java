@@ -38,7 +38,7 @@ public class RegistrationAllSimulation extends Simulation {
             );
 
     private static String randomWalletAddress(){
-        return "0x"+ UUID.randomUUID().toString().replace("-","");
+        return "0x11"+ UUID.randomUUID().toString().replace("-","");
     }
 
     {
