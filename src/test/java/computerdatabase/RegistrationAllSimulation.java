@@ -18,13 +18,13 @@ import java.util.UUID;
  */
 public class RegistrationAllSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 10;
+    private static int TEST_USER_COUNT = 1;
 
     private static int DURATION_SECONDS = 10;
 
     private HttpProtocolBuilder httpProtocol = http
-            //.baseUrl("http://172.31.18.132:10000")
-            .baseUrl("https://pre.actqa.com")
+            .baseUrl("http://172.31.18.132:8000")
+            //.baseUrl("https://pre.actqa.com")
             .inferHtmlResources()
             .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
             .shareConnections();
