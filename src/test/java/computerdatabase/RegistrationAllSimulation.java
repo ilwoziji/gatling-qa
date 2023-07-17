@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 public class RegistrationAllSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 200;
+    private static int TEST_USER_COUNT = 100;
 
     private static int DURATION_SECONDS = 100;
 
@@ -39,7 +39,7 @@ public class RegistrationAllSimulation extends Simulation {
 
     private static String generateBody(){
         String address = "{ \"walletAddress\": \"" + randomWalletAddress() + "\",\"walletSign\": \"123456\"}";
-        System.out.println(address);
+        //System.out.println(address);
         return address;
     }
 
