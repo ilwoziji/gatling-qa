@@ -18,9 +18,9 @@ import java.util.UUID;
  */
 public class RegistrationAllSimulation extends Simulation {
 
-    private static int TEST_USER_COUNT = 1;
+    private static int TEST_USER_COUNT = 500;
 
-    private static int DURATION_SECONDS = 10;
+    private static int DURATION_SECONDS = 100;
 
     private HttpProtocolBuilder httpProtocol = http
             .baseUrl("http://172.31.18.132:8000")
